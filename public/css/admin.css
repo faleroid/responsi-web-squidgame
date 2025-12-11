@@ -1,0 +1,130 @@
+.admin-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+header {
+    display: none;
+}
+
+.sidebar {
+    width: 220px;
+    background-color: rgba(128, 128, 128, 0.151);
+    border-right: 1px solid var(--color-dark);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    position: fixed;
+    height: 100%;
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.sidebar-menu {
+    list-style: none;
+    gap: 15px;
+    padding: 0 10px 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.sidebar-menu a {
+    display: inline-block;
+    padding: 10px 0;
+    color: var(--color-white);
+    text-decoration: none;
+    transition: all 0.3s;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.sidebar-menu a:hover,
+.sidebar-menu a.active {
+    font-weight: 450;
+}
+
+.btn-logout-sidebar:hover {
+    color: red;
+}
+
+.admin-container {
+    margin-left: 220px;
+    flex: 1;
+    padding: 20px 40px;
+    width: calc(100% - 220px);
+}
+
+h2 {
+    color: var(--color-white);
+    margin-bottom: 30px;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    background: rgba(0, 0, 0, 0.237);
+    border-radius: 10px;
+    border: 1px solid var(--color-dark);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    color: var(--color-white);
+    min-width: 800px;
+}
+
+th,
+td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #444;
+}
+
+th {
+    background-color: rgba(185, 185, 185, 0.132);
+    color: var(--color-white);
+    font-weight: 450;
+    font-size: 18px;
+}
+
+tr:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.action-form {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-accept {
+    background-color: rgba(136, 255, 136, 0.514);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-reject {
+    background-color: #df0000b1;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 50px;
+    color: var(--color-gray);
+    font-size: 1.2rem;
+}

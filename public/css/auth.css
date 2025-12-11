@@ -1,0 +1,110 @@
+.auth-container {
+    color: var(--color-white);
+    min-height: 85vh;
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-wrapper {
+    width: fit-content;
+    border: 2px solid var(--color-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding: 40px 50px;
+    border-radius: 10px 50px;
+    background:
+        linear-gradient(to top left, rgba(190, 190, 190, 0.2), transparent 40%),
+        linear-gradient(to top left, black 20%, transparent 90%),
+        linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+        url('../assets/img/background.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 0 0 200px rgba(0, 0, 0, 0.9);
+}
+
+.auth-container img {
+    width: 400px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.form-wrapper {
+    min-width: 350px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-flow: column;
+    gap: 10px;
+    min-width: 100%;
+}
+
+input {
+    color: var(--color-white);
+    border: 1px solid var(--color-gray);
+    border-radius: 20px;
+    background-color: var(--color-bg);
+    padding: 10px 12px;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.form-group:focus-within label {
+    color: var(--color-primary-darkest);
+    font-weight: 500;
+}
+
+input:focus {
+    border: 1px solid var(--color-primary);
+}
+
+.btn {
+    border: none;
+    font-size: 16px;
+    padding: 10px 12px;
+    color: white;
+    border-radius: 20px;
+    background-color: var(--color-primary);
+}
+
+a {
+    font-weight: 550;
+    color: var(--color-primary);
+}
+
+@media screen and (max-width: 768px) {}
+
+@media screen and (max-width: 576px) {
+    .form-wrapper {
+        min-width: 300px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    label,
+    .btn {
+        font-size: 14px;
+    }
+
+    p {
+        font-size: 14px;
+        text-align: center;
+    }
+}

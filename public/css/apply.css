@@ -1,0 +1,167 @@
+.auth-container {
+    width: 100%;
+    min-height: calc(100vh - 150px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    overflow-y: auto;
+}
+
+.form-card {
+    background: rgba(66, 66, 66, 0.363);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(68, 68, 68, 0.1);
+    border-radius: 15px;
+    padding: 40px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    color: var(--color-text);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-card h2 {
+    text-align: left;
+    color: var(--color-white);
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-weight: 450;
+}
+
+.role-badge {
+    display: inline-block;
+    font-size: 0.9rem;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border: 1px solid currentColor;
+}
+
+/* Ensure form takes full width of the card */
+.form-card form {
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 25px;
+    text-align: left;
+    width: 100%;
+}
+
+.form-group label {
+    font-size: 16px;
+    display: block;
+    color: #aaa;
+    margin-bottom: 8px;
+}
+
+textarea {
+    resize: none;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Hide number spin buttons */
+.form-group input[type=number]::-webkit-inner-spin-button,
+.form-group input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.form-group input[type=number] {
+    -moz-appearance: textfield;
+}
+
+/* Dark options for select dropdown */
+.form-group select option {
+    background-color: #222;
+    color: white;
+}
+
+/* Immutable fields style */
+.form-group input[readonly] {
+    opacity: 0.6;
+    cursor: default;
+    border-color: transparent;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-top: 10px;
+    color: white;
+}
+
+.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+.theme-player .role-badge {
+    color: var(--color-green);
+    border-color: var(--color-green);
+    box-shadow: 0 0 10px rgba(33, 128, 53, 0.3);
+}
+
+.theme-player .btn-submit {
+    background: var(--color-green);
+}
+
+.theme-player .btn-submit:hover {
+    background: rgb(40, 160, 65);
+    box-shadow: 0 0 30px var(--color-green);
+}
+
+.theme-guard .role-badge {
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+    box-shadow: 0 0 10px rgba(216, 26, 172, 0.3);
+}
+
+.theme-guard .btn-submit {
+    background: var(--color-primary);
+}
+
+.theme-guard .btn-submit:hover {
+    background: rgb(240, 40, 190);
+    box-shadow: 0 0 30px var(--color-primary);
+}
+
+.notification {
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    text-align: center;
+}

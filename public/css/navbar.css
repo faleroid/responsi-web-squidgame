@@ -1,0 +1,22 @@
+/* Navbar Styles */
+.navbar-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-dark);
+    border-radius: 30px;
+    width: fit-content;
+}
+
+.navbar-content a {
+    text-decoration: none;
+    color: var(--color-white);
+    padding: 10px 20px;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+}
+
+.navbar-content a.active {
+    background-color: var(--color-white);
+    color: var(--color-dark);
+}

@@ -52,19 +52,19 @@
     color: #03a66a;
 }
 
-.status-eliminated,
+.status-rejected,
 .status-error {
     border-color: #ed1b76;
     /* Squid Game Pink/Red */
     box-shadow: 0 0 30px rgba(237, 27, 118, 0.3);
 }
 
-.status-eliminated::before,
+.status-rejected::before,
 .status-error::before {
     background: #ed1b76;
 }
 
-.status-eliminated h2,
+.status-rejected h2,
 .status-error h2 {
     color: #ed1b76;
 }

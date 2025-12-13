@@ -99,11 +99,12 @@ tr:hover {
 
 .action-form {
     display: flex;
+    justify-content: center;
     gap: 10px;
 }
 
 .btn-accept {
-    background-color: rgba(136, 255, 136, 0.514);
+    background-color: rgba(39, 255, 39, 0.447);
     color: white;
     border: none;
     padding: 8px 15px;
@@ -113,8 +114,8 @@ tr:hover {
 }
 
 .btn-reject {
-    background-color: #df0000b1;
-    color: white;
+    background-color: transparent;
+    color: #df0000b1;
     border: none;
     padding: 8px 15px;
     border-radius: 5px;
@@ -127,4 +128,97 @@ tr:hover {
     padding: 50px;
     color: var(--color-gray);
     font-size: 1.2rem;
+}
+
+.statistics-content {
+    margin-bottom: 40px;
+}
+
+.stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.stat-card {
+    border: 1px solid var(--color-dark);
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    backdrop-filter: blur(5px);
+}
+
+.stat-card h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--color-gray);
+}
+
+.stat-card .count {
+    font-size: 2.5rem;
+    font-weight: 450;
+    color: var(--color-white);
+    margin: 10px 0;
+}
+
+.stat-card.accepted {
+    background:
+        linear-gradient(to top right,
+            transparent,
+            #08760c);
+}
+
+.stat-card.total {
+    background:
+        linear-gradient(to top right,
+            transparent,
+            #6f6f6f57);
+}
+
+.stat-card.pending {
+    background:
+        linear-gradient(to top right,
+            transparent,
+            rgb(124, 124, 11));
+}
+
+.stat-card.rejected {
+    background:
+        linear-gradient(to top right,
+            transparent,
+            #9f190f);
+}
+
+.stat-card.roles {
+    grid-column: span 2;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.role-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 10px;
+    justify-content: center;
+    width: 100%;
+}
+
+.role-item {
+    font-size: 0.9rem;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: var(--color-white);
+}
+
+.role-item span {
+    font-weight: bold;
+    color: var(--color-primary);
+    margin-left: 5px;
 }

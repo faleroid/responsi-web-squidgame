@@ -31,8 +31,8 @@ if ($application) {
         $title = 'ACCEPTED';
         $message = 'Congratulations. You have been accepted into the game. <br>Wait for the pickup vehicle at the designated location at midnight.';
     } elseif ($dbStatus === 'eliminated') {
-        $statusClass = 'status-eliminated';
-        $title = 'ELIMINATED';
+        $statusClass = 'status-rejected';
+        $title = 'REJECTED';
         $message = 'We regret to inform you that the quota is full. <br>Your application has been rejected.';
     } elseif ($dbStatus === 'pending') {
         $statusClass = 'status-pending';

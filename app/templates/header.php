@@ -24,12 +24,14 @@ if (session_status() === PHP_SESSION_NONE) {
     <?php if (isset($pageStyles)): ?>
         <link rel="stylesheet" href="<?= $cssPathPrefix ?>css/style.css">
         <link rel="stylesheet" href="<?= $cssPathPrefix ?>css/navbar.css">
+        <link rel="stylesheet" href="<?= $cssPathPrefix ?>css/loader.css">
         <link rel="stylesheet" href="<?= $cssPathPrefix ?><?= $pageStyles ?>">
     <?php endif; ?>
 
     <?php if (isset($pageStylesIndex)): ?>
         <link rel="stylesheet" href="public/css/style.css">
         <link rel="stylesheet" href="public/css/navbar.css">
+        <link rel="stylesheet" href="public/css/loader.css">
         <link rel="stylesheet" href="<?= $pageStylesIndex ?>">
     <?php endif; ?>
 </head>

@@ -86,4 +86,77 @@ class ApplicationModel
         $stmt = $this->db->prepare("UPDATE applications SET status = ? WHERE id = ?");
         return $stmt->execute([$newStatus, $applicationId]);
     }
+
+    public function getStatusCounts()
+    {
+        // Initialize default counts
+        $counts = [
+            'total' => 0,
+            'pending' => 0,
+            'accepted' => 0, // Survivors
+            'eliminated' => 0  // Eliminated
+        ];
+
+        $query = "SELECT status, COUNT(*) as count FROM applications GROUP BY status";
+        $result = $this->db->query($query);
+
+        if ($result) {
+            while ($row = $result->fetch_assoc()) {
+                $status = $row['status'];
+                $count = (int) $row['count'];
+                $counts['total'] += $count;
+
+                if (isset($counts[$status])) {
+                    $counts[$status] = $count;
+                }
+            }
+        }
+
+        return $counts;
+    }
+
+    public function getRoleCounts()
+    {
+        $query = "SELECT p.name as role_name, COUNT(a.id) as count 
+                  FROM applications a
+                  JOIN positions p ON a.position_id = p.id
+                  GROUP BY p.name";
+
+        $result = $this->db->query($query);
+        $roleCounts = [];
+
+        if ($result) {
+            while ($row = $result->fetch_assoc()) {
+                $roleCounts[$row['role_name']] = (int) $row['count'];
+            }
+        }
+
+        return $roleCounts;
+    }
+
+    public function getHistoryApplications()
+    {
+        $query = "SELECT a.*, u.username, p.name as role_name 
+                  FROM applications a
+                  JOIN users u ON a.user_id = u.user_id
+                  JOIN positions p ON a.position_id = p.id
+                  WHERE a.status IN ('accepted', 'eliminated')
+                  ORDER BY a.created_at DESC";
+
+        $result = $this->db->query($query);
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
+    public function getAcceptedApplications()
+    {
+        $query = "SELECT a.*, u.username, p.name as role_name 
+                  FROM applications a
+                  JOIN users u ON a.user_id = u.user_id
+                  JOIN positions p ON a.position_id = p.id
+                  WHERE a.status = 'accepted'
+                  ORDER BY a.created_at DESC";
+
+        $result = $this->db->query($query);
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
 }

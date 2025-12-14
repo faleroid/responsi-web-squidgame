@@ -147,12 +147,5 @@ footer p {
 }
 
 @media screen and (max-width: 576px) {
-    header {
-        display: flex;
-        justify-content: center;
-    }
-
-    .nav-menu {
-        display: none;
-    }
+    /* Navbar handled in navbar.css */
 }

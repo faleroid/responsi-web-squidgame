@@ -30,6 +30,7 @@ require_once '../../app/templates/header.php';
             <li><a href="history.php" class="active">History</a></li>
             <li><a href="../../app/controllers/auth/LogoutController.php" class="btn-logout-sidebar">Logout</a></li>
         </ul>
+        <div class="toggle-handle"></div>
     </aside>
 
     <main class="content admin-container">
@@ -69,6 +70,33 @@ require_once '../../app/templates/header.php';
     </main>
 </div>
 
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const handle = document.querySelector('.toggle-handle');
+        const sidebar = document.querySelector('.sidebar');
+
+        // Toggle function
+        function toggleSidebar() {
+            if (handle) handle.classList.toggle('active');
+            sidebar.classList.toggle('active');
+        }
+
+        if (handle) handle.addEventListener('click', toggleSidebar);
+
+        // Close sidebar when clicking outside on mobile
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+                const clickedInside = sidebar.contains(e.target) ||
+                    (handle && handle.contains(e.target));
+
+                if (!clickedInside && sidebar.classList.contains('active')) {
+                    sidebar.classList.remove('active');
+                    if (handle) handle.classList.remove('active');
+                }
+            }
+        });
+    });
+</script>
 </body>
 
 </html>

@@ -32,6 +32,7 @@ require_once '../../app/templates/header.php';
 ?>
 
 <div class="admin-layout">
+
     <aside class="sidebar">
         <div class="sidebar-header">
             <img src="../assets/img/logo.png" alt="logo" width="150px">
@@ -41,6 +42,11 @@ require_once '../../app/templates/header.php';
             <li><a href="history.php">History</a></li>
             <li><a href="../../app/controllers/auth/LogoutController.php" class="btn-logout-sidebar">Logout</a></li>
         </ul>
+        <div class="toggle-handle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </aside>
 
     <main class="content admin-container">
@@ -170,6 +176,34 @@ require_once '../../app/templates/header.php';
     </main>
 </div>
 
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const handle = document.querySelector('.toggle-handle');
+        const sidebar = document.querySelector('.sidebar');
+        const content = document.querySelector('.content');
+
+        // Toggle function
+        function toggleSidebar() {
+            if (handle) handle.classList.toggle('active');
+            sidebar.classList.toggle('active');
+        }
+
+        if (handle) handle.addEventListener('click', toggleSidebar);
+
+        // Close sidebar when clicking outside on mobile
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+                const clickedInside = sidebar.contains(e.target) ||
+                    (handle && handle.contains(e.target));
+
+                if (!clickedInside && sidebar.classList.contains('active')) {
+                    sidebar.classList.remove('active');
+                    if (handle) handle.classList.remove('active');
+                }
+            }
+        });
+    });
+</script>
 </body>
 
 </html>

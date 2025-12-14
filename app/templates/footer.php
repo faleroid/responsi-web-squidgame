@@ -17,6 +17,16 @@
                 }, 500);
             }, 3000);
         });
+
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+
+        if (hamburger && navMenu) {
+            hamburger.addEventListener("click", () => {
+                hamburger.classList.toggle("active");
+                navMenu.classList.toggle("active");
+            });
+        }
     });
 
     window.addEventListener('load', function () {

@@ -46,6 +46,13 @@ if (session_status() === PHP_SESSION_NONE) {
                     <img src="<?= $cssPathPrefix ?>assets/img/logo.png" alt="logo" width="100px">
                 </a>
             <?php endif; ?>
+
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+
             <ul class="nav-menu">
                 <?php if (isset($_SESSION['user_id'])): ?>
                     <?php if (isset($pageStylesIndex)): ?>

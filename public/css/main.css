@@ -60,6 +60,7 @@ h1 {
     font-size: 3rem;
     text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .card {
@@ -106,6 +107,8 @@ h1 {
     border: none;
     transition: all 0.5s ease;
     cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
 }
 
 .card-player .btn {
@@ -157,4 +160,82 @@ h1 {
         url('../assets/img/player.webp');
     background-size: cover;
     background-position: center;
+}
+
+@media screen and (max-width: 992px) {
+    .content {
+        padding: 20px 50px;
+    }
+
+    .top h2 {
+        font-size: 80px;
+    }
+
+    .card {
+        height: 600px;
+    }
+
+    .card h2 {
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .content {
+        padding: 20px 30px;
+    }
+
+    .top p {
+        text-align: center;
+    }
+
+    .top h2 {
+        font-size: 60px;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .content {
+        padding: 20px 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+        letter-spacing: 2px;
+    }
+
+    .top {
+        height: 150px;
+    }
+
+    .top p {
+        font-size: 14px;
+    }
+
+    .top h2 {
+        font-size: 40px;
+    }
+
+    .card {
+        height: 500px;
+        padding: 20px;
+    }
+
+    .card h2 {
+        font-size: 30px;
+    }
+
+    .card p {
+        font-size: 14px;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
 }

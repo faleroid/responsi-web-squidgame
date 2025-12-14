@@ -12,6 +12,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 .status-card {
@@ -114,4 +115,42 @@
     background: var(--color-white);
     color: var(--color-dark);
     transform: translateY(-2px);
+}
+
+@media screen and (max-width: 768px) {
+    .content {
+        padding: 20px 50px;
+    }
+
+    .status-card {
+        padding: 30px;
+        max-width: 90%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .content {
+        padding: 20px 20px;
+        gap: 30px;
+    }
+
+    .status-card {
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .status-card h2 {
+        font-size: 1.5rem;
+    }
+
+    .status-message {
+        font-size: 1rem;
+    }
+
+    .btn-home {
+        padding: 10px 20px;
+        font-size: 14px;
+        width: 100%;
+        text-align: center;
+    }
 }

@@ -2,5 +2,5 @@
 
 You can login using the following admin account:
 
-- **Username:** admin  
+- **Email:** admin@gmail.com  
 - **Password:** 123
